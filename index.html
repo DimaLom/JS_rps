@@ -6,16 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Камень-Ножницы-Бумага</title>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap&subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header class="header">
-        <h1 class="header-title">Игра "Камень-Ножницы-Бумага"</h1>
-        <h2 class="header-subtitle">by Dmitriy Lomov</h2>
-    </header>
-    <main class="main">
-    </main>
+    <div class="container">
+        <header class="header">
+            <h1 class="header-title">Игра "Камень-Ножницы-Бумага"</h1>
+            <h2 class="header-subtitle">by Dmitriy Lomov</h2>
+            <button class="rules-btn">Правила</button>
+        </header>
+        <main class="main">
+            <div class="rules">
+                <h3 class="rules-title">
+                    Правила игры:
+                </h3>
+                <ol class="rules-list">
+                    <li class="rules-list-item">
+                        Для того, чтобы начать игру - нажмите на кнопку с действием(Камень, Ножницы или Бумага).
+                    </li>
+                    <li class="rules-list-item">
+                        Дождитесь, пока компьютер выберет действие.
+                    </li>
+                    <li class="rules-list-item">
+                        Камень бьет ножницы.
+                    </li>
+                    <li class="rules-list-item">
+                        Ножницы бьют бумагу.
+                    </li>
+                    <li class="rules-list-item">
+                        Бумага бьет камень.
+                    </li>
+                    <li class="rules-list-item">
+                        Good luck & Have a fun! ;)
+                    </li>
+                </ol>
+            </div>
+            <button class="turn-btn" data-turn="rock">Камень</button>
+            <button class="turn-btn" data-turn="paper">Ножницы</button>
+            <button class="turn-btn" data-turn="scissors">Бумага</button>
+
+        </main>
+    </div>
     <script src="js/script.js"></script>
 </body>
 
