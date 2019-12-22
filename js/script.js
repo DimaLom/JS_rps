@@ -65,14 +65,28 @@ let game = {
         resultsBlock.innerHTML = str
     },
     showTurns() {
-        playerDisplay.innerHTML = `
+        if (this.playerTurn !== 1) {
+            playerDisplay.innerHTML = `
                                 <span> Игрок бросает... </span>
-                                <img src='../img/${this.playerTurn}.png' width='200' height='200'>
+                                <img class="scale" src='../img/${this.playerTurn}.png'>
                                 `
-        compDisplay.innerHTML = `
+        } else {
+            playerDisplay.innerHTML = `
+                                <span> Игрок бросает... </span>
+                                <img src='../img/${this.playerTurn}.png'>
+                                `
+        }
+        if (this.compTurn === 1) {
+            compDisplay.innerHTML = `
                                 <span> ...комп в ответ! </span>
-                                <img src='../img/${this.compTurn}.png' width='200' height='200'>
+                                <img class="scale" src='../img/${this.compTurn}.png'>
                                 `
+        } else {
+            compDisplay.innerHTML = `
+                                <span> ...комп в ответ! </span>
+                                <img src='../img/${this.compTurn}.png'>
+                                `
+        }
     }
 }
 

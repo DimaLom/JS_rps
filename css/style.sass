@@ -28,8 +28,6 @@ body
     top: 320px
     left: 0
     align-self: flex-start
-    animation: background 10s infinite alternate
-    background-position: 0 0
     background: transparent
     border-radius: 0 0 20px 0
     border: none
@@ -95,6 +93,7 @@ body
     width: 60%
     display: flex
     justify-content: space-between
+    align-items: center
     margin-top: 30px
 
     .player-display,
@@ -108,14 +107,19 @@ body
         font-size: 28px
         letter-spacing: 1px
 
+    // .player-display img
+    //     transform: scale(-1, 1)  // отзеркалить по горизонтали
+
 .results-display
     padding: 50px
-
     
     .results
         font-size: 32px
         letter-spacing: 1.5px
         line-height: 10px  
         font-weight: bold 
+
+.scale
+    transform: scale(-1, 1)
         
                 

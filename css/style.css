@@ -45,9 +45,6 @@ body {
   left: 0;
   -ms-flex-item-align: start;
       align-self: flex-start;
-  -webkit-animation: background 10s infinite alternate;
-          animation: background 10s infinite alternate;
-  background-position: 0 0;
   background: transparent;
   border-radius: 0 0 20px 0;
   border: none;
@@ -132,6 +129,9 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 30px;
 }
 
@@ -164,5 +164,10 @@ body {
   letter-spacing: 1.5px;
   line-height: 10px;
   font-weight: bold;
+}
+
+.scale {
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
 }
 /*# sourceMappingURL=style.css.map */
