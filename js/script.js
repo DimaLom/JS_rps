@@ -3,6 +3,7 @@ const doc = document
 const rulesBtn = doc.querySelector('.rules-btn')
 const rulesBlock = doc.querySelector('.rules')
 const btnBlock = doc.querySelector('.btn-block')
+const resultsBlock = doc.querySelector('.results')
 
 let game = {
     playerTurn: 0,
@@ -10,6 +11,9 @@ let game = {
     _init() {
         rulesBtn.addEventListener('click', this.showRules)
         btnBlock.addEventListener('click', this.chooseTurn)
+    },
+    render() {
+
     },
     chooseTurn(evt) {
         let playerChoose = evt.target.dataset.turn
@@ -51,15 +55,18 @@ let game = {
             }
         }
         if (this.getBoolean(winComb.playerWin)) {
-            console.log('Победил игрок! :)')
+            this.showResults('Победил игрок! :)')
         } else if (this.getBoolean(winComb.compWin)) {
-            console.log('Победил комп! :(')
+            this.showResults('Победил комп! :(')
         } else {
-            console.log('Ничья, товарищи!')
+            this.showResults('Ничья, товарищи!')
         }
     },
     showRules() {
         rulesBlock.classList.contains('visible') ? rulesBlock.classList.remove('visible') : rulesBlock.classList.add('visible')
+    },
+    showResults(str) {
+        resultsBlock.innerHTML = str
     }
 }
 

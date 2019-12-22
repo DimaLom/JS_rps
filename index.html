@@ -15,9 +15,9 @@
         <header class="header">
             <h1 class="header-title">Игра "Камень-Ножницы-Бумага"</h1>
             <h2 class="header-subtitle">by Dmitriy Lomov</h2>
-            <button class="rules-btn">Правила</button>
         </header>
         <main class="main">
+            <button class="rules-btn">Правила</button>
             <div class="rules">
                 <h3 class="rules-title">
                     Правила игры:
@@ -40,17 +40,22 @@
                     </li>
                 </ol>
             </div>
-            <div class="btn-block">
-                <button class="turn-btn" data-turn="rock">Камень</button>
-                <button class="turn-btn" data-turn="paper">Ножницы</button>
-                <button class="turn-btn" data-turn="scissors">Бумага</button>
-            </div>
-            <div class="display-wrap">
-                <div class="player-display">
-
+            <div class="game-container">
+                <div class="btn-block">
+                    <button class="turn-btn" data-turn="rock">Камень</button>
+                    <button class="turn-btn" data-turn="paper">Ножницы</button>
+                    <button class="turn-btn" data-turn="scissors">Бумага</button>
                 </div>
-                <div class="comp-display">
+                <div class="results-display">
+                    <span class="results"></span>
+                </div>
+                <div class="display-wrap">
+                    <div class="player-display">
 
+                    </div>
+                    <div class="comp-display">
+
+                    </div>
                 </div>
             </div>
         </main>

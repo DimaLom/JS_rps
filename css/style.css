@@ -68,17 +68,26 @@ body {
           animation: background 10s infinite alternate;
   background-position: 0 0;
   background: radial-gradient(rgba(255, 255, 0, 0.7), rgba(187, 255, 190, 0.7), rgba(255, 187, 255, 0.7));
-  border-radius: 20px;
+  border-radius: 0 0 20px 0;
+  border: none;
   color: #000;
   cursor: pointer;
   font-family: 'Amatic SC', cursive;
   font-size: 20px;
   font-weight: bold;
   line-height: 30px;
-  margin-left: 80px;
   text-shadow: 1px 2px 1px #ff0;
-  width: 200px;
+  width: 150px;
   z-index: 1;
+  -webkit-transition: -webkit-box-shadow ease .3s;
+  transition: -webkit-box-shadow ease .3s;
+  transition: box-shadow ease .3s;
+  transition: box-shadow ease .3s, -webkit-box-shadow ease .3s;
+}
+
+.rules-btn:hover {
+  -webkit-box-shadow: 1px 1px 3px #000;
+          box-shadow: 1px 1px 3px #000;
 }
 
 @-webkit-keyframes background {
@@ -96,9 +105,9 @@ body {
 .rules {
   background: rgba(255, 255, 0, 0.4);
   border-radius: 20px;
-  -webkit-box-shadow: 1px 2px 10px #000;
-          box-shadow: 1px 2px 10px #000;
-  margin-left: 20px;
+  -webkit-box-shadow: 0 2px 5px #000;
+          box-shadow: 0 2px 5px #000;
+  margin: 10px 0 0 10px;
   padding: 10px;
   position: absolute;
   text-shadow: 1px 1px 2px #999;
@@ -107,6 +116,15 @@ body {
   opacity: 0;
   -webkit-transition: opacity ease .3s;
   transition: opacity ease .3s;
+}
+
+.rules::after {
+  content: '';
+  position: absolute;
+  left: 65px;
+  top: -20px;
+  border: 10px solid transparent;
+  border-bottom: 10px solid rgba(255, 255, 0, 0.5);
 }
 
 .rules-list-item {
@@ -120,7 +138,7 @@ body {
   opacity: 1;
 }
 
-.main {
+.game-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -128,12 +146,12 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .btn-block {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
   margin-top: 50px;
 }
 
@@ -152,5 +170,16 @@ body {
 
 .turn-btn:not(:first-child) {
   margin-left: 30px;
+}
+
+.results-display {
+  padding: 50px;
+}
+
+.results-display .results {
+  font-size: 32px;
+  letter-spacing: 1.5px;
+  line-height: 10px;
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */

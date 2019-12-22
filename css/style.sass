@@ -46,27 +46,29 @@ body
     animation: background 10s infinite alternate
     background-position: 0 0
     background: radial-gradient(rgba(255, 255, 0, 0.7), rgba(187, 255, 190, 0.7),rgba(255, 187, 255, 0.7))
-    border-radius: 20px
+    border-radius: 0 0 20px 0
+    border: none
     color: #000
     cursor: pointer
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Amatic SC', cursive
     font-size: 20px
     font-weight: bold
     line-height: 30px
-    margin-left: 80px
     text-shadow: 1px 2px 1px #ff0
-    width: 200px
+    width: 150px
     z-index: 1
-
-@keyframes background 
-  100% 
-    background-position: 0 100px;
- 
+    transition: box-shadow ease .3s
+    &:hover
+        box-shadow: 1px 1px 3px #000        
+    @keyframes background 
+        100% 
+            background-position: 0 100px
+        
 .rules
     background: rgba(255, 255, 0, 0.4)
     border-radius: 20px
-    box-shadow: 1px 2px 10px #000
-    margin-left: 20px
+    box-shadow: 0 2px 5px #000
+    margin: 10px 0 0 10px
     padding: 10px
     position: absolute
     text-shadow: 1px 1px 2px #999
@@ -74,7 +76,16 @@ body
     visibility: hidden
     opacity: 0
     transition: opacity ease .3s
+    
+    &::after 
+        content: '' 
+        position: absolute 
+        left: 65px 
+        top: -20px
+        border: 10px solid transparent 
+        border-bottom: 10px solid rgba(255, 255, 0, 0.5) 
 
+  
     &-list
         &-item
             font-size: 1.2em
@@ -85,12 +96,12 @@ body
     visibility: visible
     opacity: 1
 
-.main
+.game-container
     display: flex
     flex-direction: column
+    align-items: center
 
 .btn-block 
-    align-self: center
     margin-top: 50px
 
 .turn-btn
@@ -98,7 +109,7 @@ body
     border-radius: 20px
     color: #ffbbff
     cursor: pointer
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Amatic SC', cursive
     font-size: 20px
     font-weight: bold
     line-height: 30px
@@ -107,3 +118,12 @@ body
 
     &:not(:first-child)
         margin-left: 30px
+
+.results-display
+    padding: 50px
+
+    .results
+        font-size: 32px
+        letter-spacing: 1.5px
+        line-height: 10px  
+        font-weight: bold 
