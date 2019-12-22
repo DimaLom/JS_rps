@@ -4,6 +4,8 @@ const rulesBtn = doc.querySelector('.rules-btn')
 const rulesBlock = doc.querySelector('.rules')
 const btnBlock = doc.querySelector('.btn-block')
 const resultsBlock = doc.querySelector('.results')
+const compDisplay = doc.querySelector('.comp-display')
+const playerDisplay = doc.querySelector('.player-display')
 
 let game = {
     playerTurn: 0,
@@ -11,9 +13,6 @@ let game = {
     _init() {
         rulesBtn.addEventListener('click', this.showRules)
         btnBlock.addEventListener('click', this.chooseTurn)
-    },
-    render() {
-
     },
     chooseTurn(evt) {
         let playerChoose = evt.target.dataset.turn
@@ -23,16 +22,13 @@ let game = {
         if (playerChoose === 'paper') game.playerTurn = 3
 
         game.gameStart()
-
+        game.showTurns()
     },
     gameStart() {
         this.compTurn = Math.floor(Math.random() * 3) + 1
 
-        if (this.playerTurn <= 3 && this.playerTurn != false) {
-            game.checkWinner(this.playerTurn, this.compTurn)
-        } else {
-            console.log('Игра окончена.')
-        }
+        game.checkWinner(this.playerTurn, this.compTurn)
+
     },
     getBoolean(arr) {
         for (el in arr) {
@@ -67,6 +63,16 @@ let game = {
     },
     showResults(str) {
         resultsBlock.innerHTML = str
+    },
+    showTurns() {
+        playerDisplay.innerHTML = `
+                                <span> Игрок бросает... </span>
+                                <img src='../img/${this.playerTurn}.png' width='200' height='200'>
+                                `
+        compDisplay.innerHTML = `
+                                <span> ...комп в ответ! </span>
+                                <img src='../img/${this.compTurn}.png' width='200' height='200'>
+                                `
     }
 }
 

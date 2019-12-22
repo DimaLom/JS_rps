@@ -124,6 +124,37 @@ body {
   margin-left: 30px;
 }
 
+.display-wrap {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 30px;
+}
+
+.display-wrap .player-display,
+.display-wrap .comp-display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.display-wrap .player-display span,
+.display-wrap .comp-display span {
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
 .results-display {
   padding: 50px;
 }

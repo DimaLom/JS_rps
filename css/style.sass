@@ -91,11 +91,31 @@ body
     &:not(:first-child)
         margin-left: 30px
 
+.display-wrap
+    width: 60%
+    display: flex
+    justify-content: space-between
+    margin-top: 30px
+
+    .player-display,
+    .comp-display
+        display: flex
+        flex-direction: column
+        align-items: center
+
+    .player-display span,
+    .comp-display span
+        font-size: 28px
+        letter-spacing: 1px
+
 .results-display
     padding: 50px
 
+    
     .results
         font-size: 32px
         letter-spacing: 1.5px
         line-height: 10px  
         font-weight: bold 
+        
+                
