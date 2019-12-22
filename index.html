@@ -27,9 +27,6 @@
                         Для того, чтобы начать игру - нажмите на кнопку с действием(Камень, Ножницы или Бумага).
                     </li>
                     <li class="rules-list-item">
-                        Дождитесь, пока компьютер выберет действие.
-                    </li>
-                    <li class="rules-list-item">
                         Камень бьет ножницы.
                     </li>
                     <li class="rules-list-item">
@@ -43,10 +40,19 @@
                     </li>
                 </ol>
             </div>
-            <button class="turn-btn" data-turn="rock">Камень</button>
-            <button class="turn-btn" data-turn="paper">Ножницы</button>
-            <button class="turn-btn" data-turn="scissors">Бумага</button>
+            <div class="btn-block">
+                <button class="turn-btn" data-turn="rock">Камень</button>
+                <button class="turn-btn" data-turn="paper">Ножницы</button>
+                <button class="turn-btn" data-turn="scissors">Бумага</button>
+            </div>
+            <div class="display-wrap">
+                <div class="player-display">
 
+                </div>
+                <div class="comp-display">
+
+                </div>
+            </div>
         </main>
     </div>
     <script src="js/script.js"></script>

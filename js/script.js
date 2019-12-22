@@ -1,10 +1,31 @@
-let game = {
-    gameStart() {
-        let playerTurn = +prompt('Ходит игрок.\n 1 - камень, 2 - ножницы, 3 - бумага, другое - закончить игру')
-        let compTurn = Math.floor(Math.random() * 3) + 1
+const doc = document
 
-        if (playerTurn <= 3 && playerTurn != false) {
-            game.checkWinner(playerTurn, compTurn)
+const rulesBtn = doc.querySelector('.rules-btn')
+const rulesBlock = doc.querySelector('.rules')
+const btnBlock = doc.querySelector('.btn-block')
+
+let game = {
+    playerTurn: 0,
+    compTurn: 0,
+    _init() {
+        rulesBtn.addEventListener('click', this.showRules)
+        btnBlock.addEventListener('click', this.chooseTurn)
+    },
+    chooseTurn(evt) {
+        let playerChoose = evt.target.dataset.turn
+
+        if (playerChoose === 'rock') game.playerTurn = 1
+        if (playerChoose === 'scissors') game.playerTurn = 2
+        if (playerChoose === 'paper') game.playerTurn = 3
+
+        game.gameStart()
+
+    },
+    gameStart() {
+        this.compTurn = Math.floor(Math.random() * 3) + 1
+
+        if (this.playerTurn <= 3 && this.playerTurn != false) {
+            game.checkWinner(this.playerTurn, this.compTurn)
         } else {
             console.log('Игра окончена.')
         }
@@ -36,12 +57,10 @@ let game = {
         } else {
             console.log('Ничья, товарищи!')
         }
+    },
+    showRules() {
+        rulesBlock.classList.contains('visible') ? rulesBlock.classList.remove('visible') : rulesBlock.classList.add('visible')
     }
 }
 
-const rulesBtn = document.querySelector('.rules-btn')
-const rulesBlock = document.querySelector('.rules')
-
-rulesBtn.addEventListener('click', () => {
-    rulesBlock.classList.contains('visible') ? rulesBlock.classList.remove('visible') : rulesBlock.classList.add('visible')
-})
+game._init()
