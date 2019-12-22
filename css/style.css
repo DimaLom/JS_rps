@@ -206,6 +206,10 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 30px;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all ease .2s;
+  transition: all ease .2s;
 }
 
 .display-wrap .player-display,
@@ -267,5 +271,10 @@ body {
   font-size: 1.2rem;
   font-weight: bold;
   color: #770000;
+}
+
+.show-game-field {
+  visibility: visible;
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */
