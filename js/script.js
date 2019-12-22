@@ -59,7 +59,13 @@ let game = {
         }
     },
     showRules() {
-        rulesBlock.classList.contains('visible') ? rulesBlock.classList.remove('visible') : rulesBlock.classList.add('visible')
+        if (rulesBlock.classList.contains('visible')) {
+            rulesBlock.classList.remove('visible')
+            rulesBtn.innerHTML = 'Правила игры'
+        } else {
+            rulesBlock.classList.add('visible')
+            rulesBtn.innerHTML = 'закрыть'
+        }
     },
     showResults(str) {
         resultsBlock.innerHTML = str

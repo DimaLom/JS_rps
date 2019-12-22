@@ -1,5 +1,9 @@
-body
+$color-yellow: #cece04 // $color-yellow
+$color-red: #770000  
+$color-black: #000   
+$color-khaki: #a3a86b 
     
+body
     font-family: 'Amatic SC', cursive
     margin: 0
     padding: 0
@@ -8,11 +12,12 @@ body
     display: flex
     flex-direction: column
     position: relative
-    background: url('https://avatars.mds.yandex.net/get-pdb/477388/38587d77-6413-4ee5-bc6b-345d84e62b59/s1200') no-repeat
+    background: url('../img/bg.jpg') no-repeat
     background-size: cover
     min-height: 100vh
 
 .header
+    background: rgba(0, 0, 0, 0.5)
     box-sizing: border-box
     display: flex
     flex-direction: column
@@ -21,7 +26,12 @@ body
         align-self: center
         font-size: 50px
         letter-spacing: 2px
-        text-shadow: 1px 2px 2px #ffbbff
+        text-shadow: 1px 2px 2px $color-black
+        color: $color-khaki
+
+.main
+    background: rgba(0, 0, 0, 0.5)
+    min-height: 100vh   
 
 .rules-btn
     position: absolute
@@ -31,37 +41,53 @@ body
     background: transparent
     border-radius: 0 0 20px 0
     border: none
-    color: #000
+    color: $color-red
     cursor: pointer
     font-family: 'Amatic SC', cursive
     font-size: 20px
     font-weight: bold
     line-height: 30px
     outline: none
-    text-shadow: 1px 2px 1px #ff0
+    text-shadow: 1px 2px 1px $color-black
     width: 100%
-    z-index: 1
-    
+    text-transform: uppercase
+    letter-spacing: 2px
+    word-spacing: 5px
+    transition: all ease .3s
+
+    &:focus
+        color: darken($color-khaki,10)
+
+    &:hover
+        color: $color-khaki
    
 .rules
-    color: #ff0
     background: rgba(0, 0, 0, 0.4)
     border-radius: 0 0 20px 20px
-    box-shadow: 0 2px 5px #000
+    box-shadow: 0 2px 5px $color-black
     padding: 0 10px
     position: absolute
     top: -320px
     left: 0
-    text-shadow: 1px 1px 1px #000
+    text-shadow: 1px 1px 1px $color-black
     width: 300px
     height: 350px
     transition: all ease .3s
-    
+
+    &-title
+        color: $color-khaki
+        letter-spacing: 1px
+        font-size: 1.4em
+
     &-list
         &-item
+            color: $color-yellow
             font-size: 1.3em
             letter-spacing: 1px
             margin: 10px
+
+    &:hover
+        background: rgba(0, 0, 0, 0.6)
 
 .visible
     top: 0
@@ -72,19 +98,55 @@ body
     align-items: center
 
 .btn-block 
+    position: relative
+    width: 50%
     margin-top: 50px
+    background: rgba(0, 0, 0, 0.5)
+    padding: 10px
+    text-align: center
+
+    &:after 
+        content: ''
+        position: absolute
+        top: 0
+        right: -54px
+        border: 27px solid transparent
+        border-left: 27px solid rgba(0, 0, 0, 0.5)
+
+    &:before 
+        content: ''
+        position: absolute
+        top: 0
+        left: -54px
+        border: 27px solid transparent
+        border-right: 27px solid rgba(0, 0, 0, 0.5)
 
 .turn-btn
-    background: rgba(34, 34, 34, 0.8)
+    background: transparent
     border-radius: 20px
-    color: #ffbbff
+    border: 1px solid  rgba(119, 0, 0, 0.5)
+    color: $color-yellow
+    text-shadow: 1px 2px 2px $color-black
     cursor: pointer
     font-family: 'Amatic SC', cursive
-    font-size: 20px
+    font-size: 1.5em
     font-weight: bold
+    letter-spacing: 1px
     line-height: 30px
-    width: 100px
-    z-index: 1
+    width: 120px
+    transition: all ease .3s
+    outline: none
+
+    &:focus
+        background: rgba(119, 0, 0, 0.5)
+
+    &:hover
+        background: rgba(119, 0, 0, 0.5)
+        box-shadow: 1px 2px 5px $color-black
+
+    &:active
+        background: rgba(119, 0, 0, 0.5)
+        box-shadow: none
 
     &:not(:first-child)
         margin-left: 30px
@@ -106,9 +168,8 @@ body
     .comp-display span
         font-size: 28px
         letter-spacing: 1px
-
-    // .player-display img
-    //     transform: scale(-1, 1)  // отзеркалить по горизонтали
+        color: $color-khaki
+        text-shadow: 1px 2px 2px $color-black
 
 .results-display
     padding: 50px
@@ -118,8 +179,25 @@ body
         letter-spacing: 1.5px
         line-height: 10px  
         font-weight: bold 
+        color: $color-yellow
+        text-shadow: 1px 2px 2px $color-black
 
 .scale
     transform: scale(-1, 1)
         
-                
+.footer
+    box-sizing: border-box
+    text-align: center
+    padding: 25px
+    min-height: 100px
+    background: rgba(0, 0, 0, 0.8)
+
+    &__text
+        color: #666
+        font-size: 1.1rem
+        letter-spacing: 1px
+
+        span
+            font-size: 1.2rem
+            font-weight: bold
+            color: $color-red             
