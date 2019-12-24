@@ -77,23 +77,23 @@ let game = {
             if (this.playerTurn !== 1) {
                 playerDisplay.innerHTML = `
                                     <span> Игрок бросает... </span>
-                                    <img class="scale" src='../img/${this.playerTurn}.png'>
+                                    <img class="scale" src='img/${this.playerTurn}.png'>
                                     `
             } else {
                 playerDisplay.innerHTML = `
                                     <span> Игрок бросает... </span>
-                                    <img src='../img/${this.playerTurn}.png'>
+                                    <img src='img/${this.playerTurn}.png'>
                                     `
             }
             if (this.compTurn === 1) {
                 compDisplay.innerHTML = `
                                     <span> ...комп в ответ! </span>
-                                    <img class="scale" src='../img/${this.compTurn}.png'>
+                                    <img class="scale" src='img/${this.compTurn}.png'>
                                     `
             } else {
                 compDisplay.innerHTML = `
                                     <span> ...комп в ответ! </span>
-                                    <img src='../img/${this.compTurn}.png'>
+                                    <img src='img/${this.compTurn}.png'>
                                     `
             }
         }, 150)
